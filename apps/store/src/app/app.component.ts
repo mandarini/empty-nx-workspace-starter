@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '@bg-hoard/ui-shared';
 import { formatRating } from '@bg-hoard/util-formatters';
 import { HttpClient } from '@angular/common/http';
+import { Game } from '@bg-hoard/util-interface';
 
 @Component({
   standalone: true,
@@ -16,6 +17,6 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent {
   constructor(private http: HttpClient) {}
   title = 'Board Game Hoard';
-  games = this.http.get<any[]>('/api/games');
+  games = this.http.get<Game[]>('/api/games');
   formatRating = formatRating;
 }
