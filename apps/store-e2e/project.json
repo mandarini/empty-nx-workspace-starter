@@ -4,6 +4,7 @@
   "projectType": "application",
   "sourceRoot": "apps/store-e2e/src",
   "implicitDependencies": ["store"],
+  "tags": ["scope:store", "type:e2e"],
   "// targets": "to see all targets run: nx show project store-e2e --web",
   "targets": {}
 }
