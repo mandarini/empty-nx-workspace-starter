@@ -3,10 +3,11 @@ import { RouterModule } from '@angular/router';
 import { getAllGames } from '../fake-api';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from '@bg-hoard/ui-shared';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, MatCardModule, CommonModule],
+  imports: [RouterModule, MatCardModule, CommonModule, HeaderComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
