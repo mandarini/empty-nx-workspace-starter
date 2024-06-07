@@ -22,7 +22,10 @@
             "input": "apps/store/public"
           }
         ],
-        "styles": ["apps/store/src/styles.scss"],
+        "styles": [
+          "apps/store/src/styles.scss",
+          "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"
+        ],
         "scripts": []
       },
       "configurations": {
