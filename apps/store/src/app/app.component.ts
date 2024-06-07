@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { getAllGames } from '../fake-api';
 
 @Component({
   standalone: true,
@@ -10,5 +11,6 @@ import { NxWelcomeComponent } from './nx-welcome.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'store';
+  title = 'Board Game Hoard';
+  games = getAllGames();
 }
