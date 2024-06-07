@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { map } from 'rxjs';
+import { map, switchMap } from 'rxjs';
 import { MatCardModule } from '@angular/material/card';
+import { HttpClient } from '@angular/common/http';
+import { formatRating } from '@bg-hoard/util-formatters';
 
 @Component({
   selector: 'lib-feature-game-detail',
@@ -12,9 +14,11 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './feature-game-detail.component.css',
 })
 export class FeatureGameDetailComponent {
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
-  gameId$ = this.route.paramMap.pipe(
-    map((params: ParamMap) => params.get('id'))
+  game$ = this.route.paramMap.pipe(
+    map((params: ParamMap) => params.get('id')),
+    switchMap((id) => this.http.get<any>(`/api/games/${id}`))
   );
+  formatRating = formatRating;
 }
